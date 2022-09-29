@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>
+Sambaa K'e National Park
+</title>
+<style>
+:root {
+  --numAnimals: 8;
+  --animalsAtOnce: 4;
+}
+.animals > div > p {
+  z-index: 2;
+}
+.animals > div > img {
+  width: 25vw;
+  height: 100%;
+  border: 2px solid black;
+  object-fit: cover;
+  display: inline;
+}
+.text {
+  margin: 10px;
+  overflow: hidden;
+}
+.header2 {
+  color: rgba(0,0,0,0.2);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial;
+}
+.bannerjpg {
+  width: 100%;
+  z-index: -1;
+  transition-property: transform, height;
+  transition-duration: 3s;
+  float: left;
+  object-fit: cover;
+  height: 170px;
+  object-position: 50% 20%;
+  position: relative;
+  filter: saturate(150%);
+}
+
+.banner:hover > .bannerjpg {
+  transform: scale(1.2, 1.2);
+}
+
+.banner:hover > .titleName {
+  font-size: 40px;
+}
+
+
+
+.titleName {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  transition-property: font-size;
+  transition-duration: 2s;
+  width: 100%;
+  font-family: Arial;
+  z-index: 2;
+  display: block;
+  position: absolute;
+  margin-top: 40px;
+}
+@media (max-width: 600px) {
+  .titleName {
+    font-size: 20px;
+  }
+  .banner:hover > .titleName {
+    font-size: 30px;
+  }
+}
+.banner {
+  height: 100px;
+  overflow: hidden;
+  border-bottom: 2px solid black;
+}
+.image {
+  border: 5px solid black;
+  border-radius: 10px;
+  width: 295px;
+  margin-right: 5px;
+  /* float is defined inline */
+}
+.animals {
+  width: calc((var(--numAnimals) + 4) * (100vw / var(--animalsAtOnce)));
+  margin-left: calc(var(--numAnimals) * (-100vw / var(--animalsAtOnce)));
+  border: 2px solid black;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(calc(var(--numAnimals) + var(--animalsAtOnce)), auto);
+  grid-template-rows: calc(100vw/var(--animalsAtOnce)) 30px calc(100vw/var(--animalsAtOnce)) 30px;
+  animation: slide 10s linear 0s infinite;
+}
+
+.animals:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(calc(var(--numAnimals) * (100vw / var(--animalsAtOnce))));
+  }
+}
+
+h1 {
+  margin: 0;
+}
+
+#welcome {
+  font-size: 25px;
+}
+
+@media (min-width: 800px) {
+  #welcome {
+    font-size: 5vw;
+  }
+}
+
+.animals > p {
+  text-align: center;
+  padding: 3px;
+  margin: 0;
+  width: 100%;
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  .animals > p {
+    font-size: 14px;
+  }
+}
+
+</style>
+</head>
+<body onresize="(function rl(){location.reload()})()">
+<div class="banner">
+  <img src="banner.png" alt="A picture of the Sambaa K'e lake" 
+  class="bannerjpg" />
+  <h1 class="titleName">Sambaa K'e National Park</h1>
+</div>
+
+<div class="text">
+<h1 style="font-family: Trebuchet MS; text-align: center;" id="welcome">Welcome to the Park of the Taiga Plains</h1>
+<p style="text-align: center; margin: 2px; font-size: 12px; font-weight: bold;">Located in the NT part of the Mid-Boreal Taiga Plains Ecozone, near Trout Lake.</p>
+
+<h2 style="text-align: center"><strong>Geographical Features:</strong></h2>
+<p><strong>Landform Description: </strong>Our park is situated upon a rolling landscape. Poorly drained till plains formed wetlands in our area, providing visitors with a unique experience.</p>
+<p><strong>Climate: </strong>Visitors coming should expect a warm and moist climate in the summer, but a very cold and snowy winter. Overall, temperatures average -2&#8451; annually. There is little precipitation (400 - 460mm), and permafrost occurs about 60cm deep in the soil. In the winter, snow and ice last 6 - 8 months before melting, resulting in a relatively short summer.</p>
+<p><strong>Vegetation Type: </strong>Mixed-wood, deciduous, and coniferous forests are scattered throughout the area. The understory vegetation contains a diverse range of plants.</p>
+<p><strong>Soil Type: </strong>The main types of soil found in our area include Bruinsols, Luvisols, Cryosols and Organic Soils.</p>
+
+</div>
+<h2 style="text-align: center">Animals & Plants to keep an eye out for:</h2>
+<div class="animals">
+<!-- Reminder that these photos will need to be constant - Upload onto Google Drive! -->
+  <div><img src="whitetaileddeer.jpg"/></div>
+  <div><img src="greathornedowl.jpg"/></div>
+  <div><img src="snowshoehare.jpg"/></div>
+  <div><img src="ruffedgrouse.jpg"/></div>
+  <div><img src="blackbear.jpg"></div>
+  <div><img src="lynx.jpg"></div>
+  <div><img src="moose.jpg"></div>
+  <div><img src="woodbison.jpg"></div>
+  <!-- Duplicate of first 4 animals (no need to be changed) -->
+  <div><img src="whitetaileddeer.jpg"/></div>
+  <div><img src="greathornedowl.jpg"/></div>
+  <div><img src="snowshoehare.jpg"/></div>
+  <div><img src="ruffedgrouse.jpg"/></div>
+
+  <p>White Tailed Deer</p>
+  <p>Great Horned Owl</p>
+  <p>Snowshoe Hare</p>
+  <p>Ruffed Grouse</p>
+  <p>Black Bear</p>
+  <p>Lynx</p>
+  <p>Moose</p>
+  <p>Wood Bison</p>
+  <p>White Tailed Deer</p>
+  <p>Great Horned Owl</p>
+  <p>Snowshoe Hare</p>
+  <p>Ruffed Grouse</p>
+
+  <div><img src="whitetaileddeer.jpg"/></div>
+  <div><img src="greathornedowl.jpg"/></div>
+  <div><img src="snowshoehare.jpg"/></div>
+  <div><img src="ruffedgrouse.jpg"/></div>
+  <div><img src="blackbear.jpg"></div>
+  <div><img src="lynx.jpg"></div>
+  <div><img src="moose.jpg"></div>
+  <div><img src="woodbison.jpg"></div>
+  <!-- Duplicate of first 4 animals (no need to be changed) -->
+  <div><img src="whitetaileddeer.jpg"/></div>
+  <div><img src="greathornedowl.jpg"/></div>
+  <div><img src="snowshoehare.jpg"/></div>
+  <div><img src="ruffedgrouse.jpg"/></div>
+  
+  <p>White Birch</p>
+  <p>Jack Pine</p>
+  <p>Trembling Aspen</p>
+  <p>White Spruce</p>
+  <p>Black Bear</p>
+  <p>Lynx</p>
+  <p>Moose</p>
+  <p>Wood Bison</p>
+  <p>White Tailed Deer</p>
+  <p>Great Horned Owl</p>
+  <p>Snowshoe Hare</p>
+  <p>Ruffed Grouse</p>
+  </div>
+  
+
+<!-- Note that the class name is bad, purpose to avoid repetition -->
+<div class="text">
+<h3 style="text-align: center"><strong>Works Cited:</strong></h3>
+</div>
+<script>
+document.
+</script>
+</body>
+</html>
